@@ -21,7 +21,7 @@ public class MessageSender {
 	
 	public void send(String message) {
 		log.info("MessageSender.send");
-//		jmsTemplate.convertAndSend(queue, message);
+		jmsTemplate.convertAndSend(queue, message);
 		
 //		MessageCreator mc = new MessageCreator() {
 //
@@ -33,8 +33,10 @@ public class MessageSender {
 //			
 //		};
 //		jmsTemplate.send(queue, mc);
-	MessageCreator mc = s ->s.createTextMessage("Put your text here ! 1");
-	jmsTemplate.send(queue, mc);
+//	MessageCreator mc = s ->s.createTextMessage("Put your text here ! 1");
+		// -----------------------------------------
+//	MessageCreator mc = s ->s.createTextMessage(message);
+//	jmsTemplate.send(queue, mc);
 	}
 
 }
